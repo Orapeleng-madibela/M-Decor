@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="services.css">
+    <title>Decoration Services</title>
+</head>
+<body>
+
+<header>
+    <header>
+        <div class="container">
+            <h1>Business Name</h1>
+            <nav>
+                <ul>
+                    <li><a href="orp.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact-us.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+</header>
+
+<section id="booking">
+    <h2>Book Our Services</h2>
+    <form id="bookingForm">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Your Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="cellphone">Your cellphone Number:</label>
+        <input type="cellphone" id="email" name="cellphone" required>
+
+        <label for="service">Select Service:</label>
+        <select id="service" name="service" required>
+            <option value="wedding">Wedding Decoration</option>
+            <option value="birthday">Birthday Decoration</option>
+            <option value="office">Pre School Graduations</option>
+            <option value="awards">Awards Ceremony</option>
+            <option value="tombstone">Tombstone Unveiling</option>
+        </select>
+
+        <label for="date">Select Date:</label>
+        <input type="date" id="date" name="date" required>
+
+        <button type="button" onclick="submitForm()">Book Now</button>
+    </form>
+</section>
+
+
+<footer>
+    <div class="container">
+        <div class="footer-links">
+            <div class="footer-section">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="orp.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact-us.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h2>Resources</h2>
+                <ul>
+                    <li><a href="www.decor.co.za/FAQs">FAQs</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Support</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h2>Connect With Us</h2>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+        <p>&copy; <?php echo date("Y"); ?> Your Business Name. All rights reserved.</p>
+    </div>
+</footer>
+
+<script src="services.js"></script>
+</body>
+</html>
