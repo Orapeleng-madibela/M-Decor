@@ -1,52 +1,68 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Process the form data
-    $name = $_POST["name"];
-    $email = $_POST["email"];
-    $cellphone = $_POST["cellphone"];
-    $selectedService = $_POST["service"];
-    $selectedDate = $_POST["date"];
+// Check if 'REQUEST_METHOD' is defined and if the form was submitted using the POST method
+if (isset($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] == "POST") {
+    
+    // Create a response array that will hold whether the form submission was successful and a message
+    $response = array('success' => false, 'message' => '');
 
-    // Send SMS notification using Twilio
-    require __DIR__ . '/vendor/autoload.php'; // Twilio PHP library
+    // Check which form was submitted by looking for the 'event-type' input field
+    $formType = isset($_POST['event-type']) ? 'booking' : 'contact';
 
-    $sid = 'your_twilio_sid';
-    $token = 'your_twilio_token';
-    $twilio = new Twilio\Rest\Client($sid, $token);
+    // Get and sanitize the 'name' and 'email' fields from the form submission to remove harmful characters
+    $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
+    $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
 
-    $message = $twilio->messages
-        ->create("business_owner_phone_number", // Replace with the actual business owner's phone number
-            array(
-                "from" => "your_twilio_phone_number",
-                "body" => "New booking received! $name booked $selectedService for $selectedDate."
-            )
-        );
-
-    // Send email notification using PHPMailer
-    require __DIR__ . '/vendor/autoload.php'; // PHPMailer library
-
-    $mail = new PHPMailer\PHPMailer\PHPMailer();
-    $mail->isSMTP();
-    $mail->Host = 'your_smtp_host';
-    $mail->SMTPAuth = true;
-    $mail->Username = 'your_smtp_username';
-    $mail->Password = 'your_smtp_password';
-    $mail->SMTPSecure = 'tls';
-    $mail->Port = 587;
-
-    $mail->setFrom('business_owner_email', 'Decoration Services');
-    $mail->addAddress('business_owner_email'); // Replace with the actual business owner's email
-    $mail->Subject = 'New Booking Received';
-    $mail->Body = "New booking received!\n\n$name booked $selectedService for $selectedDate.";
-
-    if (!$mail->send()) {
-        echo 'Message could not be sent. Mailer Error: ' . $mail->ErrorInfo;
-    } else {
-        echo 'Thank you, ' . $name . '! Your ' . $selectedService . ' decoration for ' . $selectedDate . ' is booked.';
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $response['message'] = 'Invalid email address';
+        echo json_encode($response);
+        exit;
     }
-} else {
-    // If someone tries to access this file directly without submitting the form, redirect them to the index page.
-    header("Location: index.html");
-    exit();
+
+    $to = "madibelaorapeleng17@gmail.com";  // Define recipient
+    $headers = "From: $email";
+
+    if ($formType === 'booking') {
+        // Booking form data
+        $phone = filter_input(INPUT_POST, 'phone', FILTER_SANITIZE_STRING);
+        $address = filter_input(INPUT_POST, 'address', FILTER_SANITIZE_STRING);
+        $postalCode = filter_input(INPUT_POST, 'postal-code', FILTER_SANITIZE_STRING);
+        $eventType = filter_input(INPUT_POST, 'event-type', FILTER_SANITIZE_STRING);
+        $eventDate = filter_input(INPUT_POST, 'event-date', FILTER_SANITIZE_STRING);
+        $eventTime = filter_input(INPUT_POST, 'event-time', FILTER_SANITIZE_STRING);
+        $guests = filter_input(INPUT_POST, 'guests', FILTER_SANITIZE_NUMBER_INT);
+        $message = filter_input(INPUT_POST, 'message', FILTER_SANITIZE_STRING);
+
+        if (empty($phone) || empty($address) || empty($postalCode) || empty($eventType) || empty($eventDate) || empty($eventTime) || empty($guests)) {
+            $response['message'] = 'All fields are required';
+            echo json_encode($response);
+            exit;
+        }
+
+        // Set subject for booking
+        $subject = "New Booking Request";
+        $email_content = "Name: $name\nEmail: $email\nPhone: $phone\nAddress: $address\nPostal Code: $postalCode\nEvent Type: $eventType\nEvent Date: $eventDate\nEvent Time: $eventTime\nGuests: $guests\nMessage: $message\n";
+
+        if (mail($to, $subject, $email_content, $headers)) {
+            $response['success'] = true;
+            $response['message'] = 'Booking request sent successfully';
+        } else {
+            $response['message'] = 'Failed to send booking request';
+        }
+
+    } else {
+        // Contact form data
+        $subject = "Event Inquiry";  // Set subject for contact enquiry
+        $message = filter_input(INPUT_POST, 'message', FILTER_SANITIZE_STRING);
+        $email_content = "Name: $name\nEmail: $email\nMessage: $message\n";
+
+        if (mail($to, $subject, $email_content, $headers)) {
+            $response['success'] = true;
+            $response['message'] = 'Enquiry sent successfully';
+        } else {
+            $response['message'] = 'Failed to send enquiry';
+        }
+    }
+
+    echo json_encode($response);
 }
 ?>
