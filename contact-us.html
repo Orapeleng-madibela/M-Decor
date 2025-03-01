@@ -5,18 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Excellent KB Events and Hire - Contact Us</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="script.js" defer></script>
 </head>
 <body>
     <!-- Header section with navigation -->
     <header>
         <nav>
-            <div class="logo">Excellent KB Events and Hire</div>
+            <div class="logo">
+                <i class="fas fa-star-of-life"></i> Excellent KB Events and Hire
+            </div>
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="book-now.html">Book Now</a></li>
-                <li><a href="contact-us.html" class="active">Contact Us</a></li>
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="services.html"><i class="fas fa-concierge-bell"></i> Services</a></li>
+                <li><a href="book-now.html"><i class="fas fa-calendar-check"></i> Book Now</a></li>
+                <li><a href="contact-us.html" class="active"><i class="fas fa-envelope"></i> Contact Us</a></li>
             </ul>
             <!-- Mobile menu burger icon -->
             <div class="burger">
@@ -28,23 +31,26 @@
     </header>
 
     <main>
-        <h1>Contact Us</h1>
+        <h1 class="page-title animate-fade-in"><i class="fas fa-envelope"></i> Contact Us</h1>
 
-        <section class="contact-info">
-            <h2>Get in Touch</h2>
+        <section class="contact-info animate-on-scroll">
+            <h2><i class="fas fa-comments"></i> Get in Touch</h2>
             <p>We'd love to hear from you! Feel free to reach out with any questions or inquiries.</p>
             
             <!-- Contact information -->
             <div class="contact-details">
                 <div class="contact-item">
+                    <i class="fas fa-phone-alt contact-icon"></i>
                     <h3>Phone</h3>
-                    <p>0766069486</p>
+                    <p><a href="tel:0766069486">0766069486</a></p>
                 </div>
                 <div class="contact-item">
+                    <i class="fas fa-envelope contact-icon"></i>
                     <h3>Email</h3>
-                    <p>mmapuladecor@gmail.com</p>
+                    <p><a href="mailto:excellentkb@example.com">excellentkb@example.com</a></p>
                 </div>
                 <div class="contact-item">
+                    <i class="fas fa-map-marker-alt contact-icon"></i>
                     <h3>Address</h3>
                     <p>House no 23 Magong, 0343</p>
                 </div>
@@ -52,36 +58,46 @@
         </section>
 
         <!-- Contact form -->
-        <section class="contact-form">
-            <h2>Send Us a Message</h2>
-            <form id="contact-form" action="process.php" method="POST">
+        <section class="contact-form animate-on-scroll">
+            <h2><i class="fas fa-paper-plane"></i> Send Us a Message</h2>
+            <form id="contact-form" action="https://formspree.io/f/your-formspree-id" method="POST">
                 <div class="form-group">
-                    <label for="name">Name:</label>
+                    <label for="name"><i class="fas fa-user"></i> Name:</label>
                     <input type="text" id="name" name="name" required>
                 </div>
                 <div class="form-group">
-                    <label for="email">Email:</label>
+                    <label for="email"><i class="fas fa-envelope"></i> Email:</label>
                     <input type="email" id="email" name="email" required>
                 </div>
                 <div class="form-group">
-                    <label for="subject">Subject:</label>
+                    <label for="subject"><i class="fas fa-heading"></i> Subject:</label>
                     <input type="text" id="subject" name="subject" required>
                 </div>
                 <div class="form-group">
-                    <label for="message">Message:</label>
+                    <label for="message"><i class="fas fa-comment-alt"></i> Message:</label>
                     <textarea id="message" name="message" rows="4" required></textarea>
                 </div>
-                <button type="submit" class="submit-button">Send Message</button>
+                <button type="submit" class="submit-button"><i class="fas fa-paper-plane"></i> Send Message</button>
             </form>
-        
+        </section>
+
+        <!-- Map section -->
+        <section class="map-section animate-on-scroll">
+            <h2><i class="fas fa-map-marked-alt"></i> Find Us</h2>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3647.3030413476204!2d-122.4194155!3d37.7749295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808f7e7dba1a3141%3A0x5d9a7d9e7a9c8fdb!2sSan%20Francisco%2C%20CA%2C%20USA!5e0!3m2!1sen!2s!4v1635181234567!5m2!1sen!2s" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
         </section>
     </main>
+
+    <!-- Back to top button -->
+    <button id="back-to-top" title="Back to top"><i class="fas fa-arrow-up"></i></button>
 
     <!-- Footer section -->
     <footer>
         <div class="footer-content">
             <div class="footer-section">
-                <h3>Quick Links</h3>
+                <h3><i class="fas fa-link"></i> Quick Links</h3>
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="services.html">Services</a></li>
@@ -90,15 +106,115 @@
                 </ul>
             </div>
             <div class="footer-section">
-                <h3>Connect With Us</h3>
-                
-                    <ul>
-                        <li><a href="https://www.facebook.com/elegantevents" target="_blank" rel="noopener noreferrer">Facebook</a></li>
-                        <li><a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
-                    </ul>
+                <h3><i class="fas fa-share-alt"></i> Connect With Us</h3>
+                <ul class="social-links">
+                    <li><a href="https://www.facebook.com/elegantevents" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i> Facebook</a></li>
+                    <li><a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
+                    <li><a href="https://instagram.com/excellentkb" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i> Instagram</a></li>
+                </ul>
             </div>
             <div class="footer-section">
-                <h3>Legal</h3>
+                <h3><i class="fas fa-gavel"></i> Legal</h3>
+                <ul>
+                    <li><a href="terms.html">Terms and Conditions</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Orapelng Madibela. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
+
+```html file="terms.html" type="html"
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excellent KB Events and Hire - Terms and Conditions</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- Header section with navigation -->
+    <header>
+        <nav>
+            <div class="logo">
+                <i class="fas fa-star-of-life"></i> Excellent KB Events and Hire
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="services.html"><i class="fas fa-concierge-bell"></i> Services</a></li>
+                <li><a href="book-now.html"><i class="fas fa-calendar-check"></i> Book Now</a></li>
+                <li><a href="contact-us.html"><i class="fas fa-envelope"></i> Contact Us</a></li>
+            </ul>
+            <!-- Mobile menu burger icon -->
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <h1 class="page-title animate-fade-in"><i class="fas fa-gavel"></i> Terms and Conditions</h1>
+        <section class="terms-and-conditions animate-on-scroll">
+            <h2><i class="fas fa-check-circle"></i> 1. Acceptance of Terms</h2>
+            <p>By using our services, you agree to comply with and be bound by the following terms and conditions. Please read these carefully.</p>
+
+            <h2><i class="fas fa-concierge-bell"></i> 2. Services</h2>
+            <p>Excellent KB Events and Hire provides event decoration services for various occasions including but not limited to weddings, graduations, funerals, and corporate events.</p>
+
+            <h2><i class="fas fa-money-check-alt"></i> 3. Booking and Payments</h2>
+            <p>A non-refundable deposit of 50% of the total cost is required to secure your booking. The remaining balance is due 14 days prior to the event date.</p>
+
+            <h2><i class="fas fa-ban"></i> 4. Cancellations and Refunds</h2>
+            <p>Cancellations made 30 days or more prior to the event date will receive a full refund of any payments made, less the non-refundable deposit. Cancellations made less than 30 days prior to the event date are not eligible for a refund.</p>
+
+            <h2><i class="fas fa-edit"></i> 5. Changes to Bookings</h2>
+            <p>Any changes to bookings must be made in writing and are subject to availability. Additional charges may apply for significant changes.</p>
+
+            <h2><i class="fas fa-exclamation-triangle"></i> 6. Liability</h2>
+            <p>Excellent KB Events and Hire is not liable for any loss or damage to property at the event venue. Clients are responsible for any damage to rented items.</p>
+
+            <h2><i class="fas fa-user-shield"></i> 7. Privacy Policy</h2>
+            <p>We respect your privacy and will only use your personal information to administer your account and provide the services you have requested from us.</p>
+
+            <h2><i class="fas fa-balance-scale"></i> 8. Governing Law</h2>
+            <p>These terms and conditions are governed by and construed in accordance with the laws of Botswana.</p>
+
+            <p class="last-updated"><i class="fas fa-calendar-alt"></i> Last updated: 24 October 2024</p>
+        </section>
+    </main>
+
+    <!-- Back to top button -->
+    <button id="back-to-top" title="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3><i class="fas fa-link"></i> Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="book-now.html">Book Now</a></li>
+                    <li><a href="contact-us.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3><i class="fas fa-share-alt"></i> Connect With Us</h3>
+                <ul class="social-links">
+                    <li><a href="https://www.facebook.com/elegantevents" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i> Facebook</a></li>
+                    <li><a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
+                    <li><a href="https://instagram.com/excellentkb" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i> Instagram</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3><i class="fas fa-gavel"></i> Legal</h3>
                 <ul>
                     <li><a href="terms.html">Terms and Conditions</a></li>
                 </ul>
