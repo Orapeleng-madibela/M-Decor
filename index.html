@@ -5,18 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Excellent KB Events and Hire</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="script.js" defer></script>
 </head>
 <body>
     <!-- Header section with navigation -->
     <header>
         <nav>
-            <div class="logo">Excellent KB Events and Hire</div>
+            <div class="logo">
+                <i class="fas fa-star-of-life"></i> Excellent KB Events and Hire
+            </div>
             <ul class="nav-links">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="book-now.html">Book Now</a></li>
-                <li><a href="contact-us.html">Contact Us</a></li>
+                <li><a href="index.html" class="active"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="services.html"><i class="fas fa-concierge-bell"></i> Services</a></li>
+                <li><a href="book-now.html"><i class="fas fa-calendar-check"></i> Book Now</a></li>
+                <li><a href="contact-us.html"><i class="fas fa-envelope"></i> Contact Us</a></li>
             </ul>
             <!-- Mobile menu burger icon -->
             <div class="burger">
@@ -30,30 +33,34 @@
     <main>
         <!-- Hero section -->
         <section class="hero">
-            <h1>Transform Your Events with Excellent KB Events and Hire</h1>
-            <p>Specializing in weddings, graduations, funerals, and more</p>
-            <a href="book-now.html" class="cta-button">Book Now</a>
+            <div class="hero-content animate-fade-in">
+                <h1>Transform Your Events with Excellent KB Events and Hire</h1>
+                <p>Specializing in weddings, graduations, funerals, and more</p>
+                <a href="book-now.html" class="cta-button"><i class="fas fa-calendar-plus"></i> Book Now</a>
+            </div>
         </section>
 
         <!-- About Us section -->
-        <section class="about-us">
-            <h2>About Us</h2>
+        <section class="about-us animate-on-scroll">
+            <h2><i class="fas fa-info-circle"></i> About Us</h2>
             <p>At Excellent KB Events and Hire, we believe that every event is a special occasion deserving of unforgettable decor. With a passion for creativity and an eye for detail, we specialize in transforming spaces into breathtaking settings for weddings, parties, corporate events, and more. Our team is dedicated to bringing your vision to life with elegant, stylish, and personalized decorations that leave a lasting impression.</p>
             <p>Let us bring your event to life with timeless designs, impeccable service, and a commitment to excellence</p>
-            <ul>
-                <li>Weddings</li>
-                <li>Graduations</li>
-                <li>Funerals</li>
-                <li>Corporate Events</li>
-                <li>Birthday Parties</li>
-                <li>And more!</li>
-            </ul>
-            <a href="services.html" class="button">Explore Our Services</a>
+            <div class="services-list">
+                <ul>
+                    <li><i class="fas fa-heart"></i> Weddings</li>
+                    <li><i class="fas fa-graduation-cap"></i> Graduations</li>
+                    <li><i class="fas fa-dove"></i> Funerals</li>
+                    <li><i class="fas fa-briefcase"></i> Corporate Events</li>
+                    <li><i class="fas fa-birthday-cake"></i> Birthday Parties</li>
+                    <li><i class="fas fa-plus-circle"></i> And more!</li>
+                </ul>
+            </div>
+            <a href="services.html" class="button animate-pulse"><i class="fas fa-arrow-right"></i> Explore Our Services</a>
         </section>
 
         <!-- Testimonials section -->
-        <!--<section class="testimonials">
-            <h2>What Our Clients Say</h2>
+        <!--<section class="testimonials animate-on-scroll">
+            <h2><i class="fas fa-quote-left"></i> What Our Clients Say</h2>
             <div class="testimonial-container">
                 <div class="testimonial">
                     <p>"Excellent KB Events and Hire made our wedding day absolutely perfect. The decorations were stunning!"</p>
@@ -63,15 +70,22 @@
                     <p>"I was impressed by their attention to detail. They truly transformed our venue."</p>
                     <p class="client-name">- Michael T.</p>
                 </div>
+                <div class="testimonial">
+                    <p>"The team went above and beyond for our corporate event. Highly recommended!"</p>
+                    <p class="client-name">- Business Solutions Ltd</p>
+                </div>
             </div>
         </section>-->
     </main>
+
+    <!-- Back to top button -->
+    <button id="back-to-top" title="Back to top"><i class="fas fa-arrow-up"></i></button>
 
     <!--Footer section -->
     <footer>
         <div class="footer-content">
             <div class="footer-section">
-                <h3>Quick Links</h3>
+                <h3><i class="fas fa-link"></i> Quick Links</h3>
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="services.html">Services</a></li>
@@ -80,17 +94,16 @@
                 </ul>
             </div>
             <div class="footer-section">
-                <h3>Connect With Us</h3>
-                
-                    <ul>
-                        <li><a href="https://www.facebook.com/elegantevents" target="_blank" rel="noopener noreferrer">Facebook</a></li>
-                        <li><a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
-                    </ul>
-                
+                <h3><i class="fas fa-share-alt"></i> Connect With Us</h3>
+                <ul class="social-links">
+                    <li><a href="https://www.facebook.com/elegantevents" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i> Facebook</a></li>
+                    <li><a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
+                    <li><a href="https://instagram.com/excellentkb" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i> Instagram</a></li>
+                </ul>
             </div>
                 
             <div class="footer-section">
-                <h3>Legal</h3>
+                <h3><i class="fas fa-gavel"></i> Legal</h3>
                 <ul>
                     <li><a href="terms.html">Terms and Conditions</a></li>
                 </ul>
