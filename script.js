@@ -299,16 +299,16 @@ document.addEventListener('DOMContentLoaded', () => {
             // Calculate based on tables or guests
             if (eventType === 'funeral') {
                 const funeralGuests = parseInt(document.getElementById('funeral-guests').value) || 0;
-                // Add P50 per guest for funeral
+                // Add R50 per guest for funeral
                 totalPrice += funeralGuests * 50;
             } else {
                 const tables = parseInt(document.getElementById('tables').value) || 0;
                 const guestsPerTable = parseInt(document.getElementById('guests-per-table').value) || 0;
                 
-                // Add P300 per table
+                // Add R300 per table
                 totalPrice += tables * 300;
                 
-                // Add P30 per guest
+                // Add R30 per guest
                 totalPrice += tables * guestsPerTable * 30;
             }
             
@@ -317,7 +317,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const priceAmount = document.getElementById('price-amount');
             
             if (priceResult && priceAmount) {
-                priceAmount.textContent = `P${totalPrice.toLocaleString()}`;
+                priceAmount.textContent = `R${totalPrice.toLocaleString()}`;
                 priceResult.classList.remove('hidden');
                 
                 // Scroll to the result
