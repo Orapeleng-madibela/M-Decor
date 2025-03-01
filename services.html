@@ -5,18 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Excellent KB Events and Hire - Services</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="script.js" defer></script>
 </head>
 <body>
     <!-- Header section with navigation -->
     <header>
         <nav>
-            <div class="logo">Excellent KB Events and Hire</div>
+            <div class="logo">
+                <i class="fas fa-star-of-life"></i> Excellent KB Events and Hire
+            </div>
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="services.html" class="active">Services</a></li>
-                <li><a href="book-now.html">Book Now</a></li>
-                <li><a href="contact-us.html">Contact Us</a></li>
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="services.html" class="active"><i class="fas fa-concierge-bell"></i> Services</a></li>
+                <li><a href="book-now.html"><i class="fas fa-calendar-check"></i> Book Now</a></li>
+                <li><a href="contact-us.html"><i class="fas fa-envelope"></i> Contact Us</a></li>
             </ul>
             <!-- Mobile menu burger icon -->
             <div class="burger">
@@ -28,33 +31,102 @@
     </header>
 
     <main>
-        <h1>Our Services</h1>
+        <h1 class="page-title animate-fade-in"><i class="fas fa-concierge-bell"></i> Our Services</h1>
 
         <!-- Services section -->
-        <section class="services">
+        <section class="services animate-on-scroll">
             <div class="service-item">
-                <img src="IMG-20240113-WA0041.jpg?height=200&width=300" alt="Wedding Decoration">
-                <h2>Weddings</h2>
-                <p>Create the wedding of your dreams with our stunning decor</p>
-                <a href="book-now.html?service=wedding" class="button">Book Now</a>
+                <div class="service-image">
+                    <img src="IMG-20240113-WA0041.jpg?height=200&width=300" alt="Wedding Decoration">
+                </div>
+                <h2><i class="fas fa-heart"></i> Weddings</h2>
+                <p>Create the wedding of your dreams with our stunning decor. We offer complete wedding decoration packages to make your special day unforgettable.</p>
+                <a href="book-now.html?service=wedding" class="button"><i class="fas fa-calendar-plus"></i> Book Now</a>
             </div>
             <div class="service-item">
-                <img src="IMG-20240113-WA0033.jpg?height=200&width=300" alt="Graduation Decoration">
-                <h2>Graduations</h2>
-                <p>Celebrate academic achievements with style</p>
-                <a href="book-now.html?service=graduation" class="button">Book Now</a>
+                <div class="service-image">
+                    <img src="IMG-20240113-WA0033.jpg?height=200&width=300" alt="Graduation Decoration">
+                </div>
+                <h2><i class="fas fa-graduation-cap"></i> Graduations</h2>
+                <p>Celebrate academic achievements with style. Our graduation decorations add elegance and joy to this important milestone in your life.</p>
+                <a href="book-now.html?service=graduation" class="button"><i class="fas fa-calendar-plus"></i> Book Now</a>
             </div>
             <div class="service-item">
-                <img src="IMG-20240113-WA0031.jpg?height=200&width=300" alt="Corporate Event Decoration">
-                <h2>Corporate Events</h2>
-                <p>Let us help you with decorating any event for you</p>
-                <a href="book-now.html?service=corporate" class="button">Book Now</a>
+                <div class="service-image">
+                    <img src="IMG-20240113-WA0031.jpg?height=200&width=300" alt="Corporate Event Decoration">
+                </div>
+                <h2><i class="fas fa-briefcase"></i> Corporate Events</h2>
+                <p>Let us help you with decorating any corporate event. From conferences to company celebrations, we create professional and impressive settings.</p>
+                <a href="book-now.html?service=corporate" class="button"><i class="fas fa-calendar-plus"></i> Book Now</a>
+            </div>
+            <div class="service-item">
+                <div class="service-image">
+                    <img src="IMG-20240113-WA0035.jpg?height=200&width=300" alt="Funeral Service">
+                </div>
+                <h2><i class="fas fa-dove"></i> Funeral Services</h2>
+                <p>We provide respectful and dignified decoration services for funeral ceremonies, helping you honor your loved ones with care and compassion.</p>
+                <a href="book-now.html?service=funeral" class="button"><i class="fas fa-calendar-plus"></i> Book Now</a>
+            </div>
+        </section>
+
+        <!-- Price Calculator -->
+        <section class="price-calculator animate-on-scroll">
+            <h2><i class="fas fa-calculator"></i> Service Price Estimator</h2>
+            <p>Get an estimate for your event decoration needs:</p>
+            
+            <div class="calculator-form">
+                <div class="form-group">
+                    <label for="event-type">Event Type:</label>
+                    <select id="event-type" name="event-type" required>
+                        <option value="">Select Event Type</option>
+                        <option value="wedding">Wedding</option>
+                        <option value="graduation">Graduation</option>
+                        <option value="funeral">Funeral</option>
+                        <option value="corporate">Corporate Event</option>
+                        <option value="birthday">Birthday Party</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div id="tables-section" class="form-group">
+                    <label for="tables">Number of Tables:</label>
+                    <input type="number" id="tables" name="tables" min="1" value="1">
+                </div>
+                
+                <div id="guests-per-table-section" class="form-group">
+                    <label for="guests-per-table">Guests per Table (max 10):</label>
+                    <input type="number" id="guests-per-table" name="guests-per-table" min="1" max="10" value="8">
+                </div>
+                
+                <div id="funeral-guests-section" class="form-group hidden">
+                    <label for="funeral-guests">Number of Guests (Funeral):</label>
+                    <input type="number" id="funeral-guests" name="funeral-guests" min="1" value="50">
+                </div>
+                
+                <div class="form-group">
+                    <label for="service-type">Type of Service:</label>
+                    <select id="service-type" name="service-type" required>
+                        <option value="basic">Basic Package</option>
+                        <option value="standard">Standard Package</option>
+                        <option value="premium">Premium Package</option>
+                        <option value="luxury">Luxury Package</option>
+                    </select>
+                </div>
+                
+                <button type="button" id="calculate-price" class="submit-button"><i class="fas fa-calculator"></i> Calculate Estimate</button>
+            </div>
+            
+            <div id="price-result" class="hidden">
+                <h3>Estimated Price:</h3>
+                <div id="price-amount" class="price-display">R0.00</div>
+                <p class="price-note">This is an estimate only. Final pricing may vary based on specific requirements and venue details.</p>
+                <a href="book-now.html" class="button"><i class="fas fa-calendar-plus"></i> Book Now</a>
             </div>
         </section>
 
         <!-- Gallery section -->
-        <section class="gallery">
-            <h2>Our Work</h2>
+        <section class="gallery animate-on-scroll">
+            <h2><i class="fas fa-images"></i> Our Work</h2>
             <div class="slideshow-container">
                 <div class="slideshow-slide">
                     <img src="IMG-20240113-WA0031.jpg?height=400&width=600" alt="Event Decoration 1">
@@ -93,18 +165,21 @@
                     <img src="IMG-20240113-WA0042.jpg?height=400&width=600" alt="Event Decoration 12">
                 </div>
                 
-                <button class="slideshow-prev">&#10094;</button>
-                <button class="slideshow-next">&#10095;</button>
+                <button class="slideshow-prev"><i class="fas fa-chevron-left"></i></button>
+                <button class="slideshow-next"><i class="fas fa-chevron-right"></i></button>
             </div>
             <div class="slideshow-dots"></div>
         </section>
     </main>
 
+    <!-- Back to top button -->
+    <button id="back-to-top" title="Back to top"><i class="fas fa-arrow-up"></i></button>
+
     <!-- Footer section -->
     <footer>
         <div class="footer-content">
             <div class="footer-section">
-                <h3>Quick Links</h3>
+                <h3><i class="fas fa-link"></i> Quick Links</h3>
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="services.html">Services</a></li>
@@ -113,15 +188,15 @@
                 </ul>
             </div>
             <div class="footer-section">
-                <h3>Connect With Us</h3>
-                
-                    <ul>
-                        <li><a href="https://www.facebook.com/elegantevents" target="_blank" rel="noopener noreferrer">Facebook</a></li>
-                        <li><a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
-                    </ul>
+                <h3><i class="fas fa-share-alt"></i> Connect With Us</h3>
+                <ul class="social-links">
+                    <li><a href="https://www.facebook.com/elegantevents" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i> Facebook</a></li>
+                    <li><a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
+                    <li><a href="https://instagram.com/excellentkb" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i> Instagram</a></li>
+                </ul>
             </div>
             <div class="footer-section">
-                <h3>Legal</h3>
+                <h3><i class="fas fa-gavel"></i> Legal</h3>
                 <ul>
                     <li><a href="terms.html">Terms and Conditions</a></li>
                 </ul>
